@@ -38,7 +38,7 @@ object flightSummary {
         |limit 5
         |""".stripMargin).show()
 
-    flightSummary.groupBy("DEST_COUNTRY_NAME").count().show()
+    flightSummary.groupBy("DEST_COUNTRY_NAME").count().limit(5).show()
 
     spark.sql(
       """
@@ -46,6 +46,7 @@ object flightSummary {
         |from flightSummary
         |group by 1
         |order by 2 desc
+        |limit 5
         |""".stripMargin).show()
 
     flightSummary
@@ -53,6 +54,7 @@ object flightSummary {
       .sum("count")
       .withColumnRenamed("sum(count)", "destination_total")
       .sort(desc("destination_total"))
+      .limit(5)
       .show()
 
 //    sqlResult.explain()
@@ -60,7 +62,7 @@ object flightSummary {
 //    print(dfResult.show())
 
     // Close SparkSession & Exit Application
-//    spark.close()
+    spark.close()
     System.exit(0)
   }
 }
