@@ -66,13 +66,6 @@
             <version>2.4.7</version>
         </dependency>
 
-        <!-- spark nlp       -->
-        <dependency>
-            <groupId>com.johnsnowlabs.nlp</groupId>
-            <artifactId>spark-nlp-spark24_2.11</artifactId>
-            <version>3.2.3</version>
-        </dependency>
-
     </dependencies>
 
 </project>
