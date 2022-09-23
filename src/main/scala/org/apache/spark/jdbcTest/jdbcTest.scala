@@ -19,7 +19,7 @@ object jdbcTest {
       .option("dbtable", "public.tbokpos_upjong_daily")
       .option("username", "slykid")
       .option("password", "Gallerhead106)")
-      .option("driver", "org.postgresql.Driver")
+      .option("driver", "org.postgresql.Driver")  // Maven 프로젝트이므로 pom.xml에 JDBC 드라이버 추가할 것
       .load()
 
     worksetDF.createOrReplaceTempView("workset")
